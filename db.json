@@ -1,0 +1,264 @@
+{
+    "properties": [
+        {
+            "id": 1,
+            "title": "Nature house in Gesves" ,
+            "images": {
+                "main": "/images/house1/image1.png",
+                "others": [
+                    "/images/house1/image2.png",
+                    "/images/house1/image3.png",
+                    "/images/house1/image4.png",
+                    "/images/house1/image5.png"
+                    ]
+            },
+            "location": "Namur, Belgium",
+            "likes": 0,
+            "description": "Unwind and relax in our sustainable homemade Tiny house.Through the large windows you will experience the real indoor-outdoor feeling in the countryside. The Tiny house is equipped with air conditioning, kitchen, bathroom and a double bed for two persons.",
+            "facilities": "2 Persoons 1 bedroom",
+            "sustainability": "Energy label: A    Off grid or supplied with 100% renewable Energy   Sustainable inventory",
+            "price": 1,
+            "type": "for rent"  
+        },
+        {
+            "id": 2,
+            "title": "Nature house in Ellertshaar" ,
+            "images": {
+                "main": "/images/house2/image1.png",
+                "others": [
+                    "/images/house2/image2.png",
+                    "/images/house2/image3.png",
+                    "/images/house2/image4.png",
+                    "/images/house2/image5.png"
+                    ]
+            },
+            "location": "Drenthe, Netherlands",
+            "likes": 0,
+            "description": "Luxury Holiday Home with Wellness for 2 people equipped with all the luxury you could wish for with sauna, outdoor shower, two person Hot tub with bubble system and LED lighting, sun beds, lounge chairs, fire bowl, stove barbecue, fully equipped kitchen, espresso machine for fresh beans, wood for hot tub and fire bowl, bathrobes, bath slippers, towels, kitchen towels, linens and a charging station for the electric car and bike!",
+            "facilities": "Bedroom 1" ,
+            "sustainability": "Energy label: A  Off grid or supplied with 100% renewable Energy  Natural Insulation materials",
+            "price": 1,  
+            "type": "for rent" 
+        },
+        {
+            "id": 3,
+            "title": "Nature house in Riel" ,
+            "images": {
+                "main": "/images/house3/image1.png",
+                "others": [
+                    "/images/house3/image2.png",
+                    "/images/house3/image3.png",
+                    "/images/house3/image4.png",
+                    "/images/house3/image5.png"
+                    ]
+            },
+            "location": "North Brabant, Netherlands",
+            "likes": 0,
+            "description": "The sustainably built cottage stands in the landlord's yard and is located on a cul-de-sac. The contemporary kitchen is equipped with all modern conveniences such as a refrigerator, combi-oven, induction stove and Quooker.",
+            "facilities": "2 bedrooms 4 persons" ,
+            "sustainability": "Off grid or supplied with 100% renewable Energy  Built with natural building materials  Natural Insulation materials",
+            "price": 1,
+            "type": "for rent"   
+        },
+        {
+            "id": 4,
+            "title": "Nature house in Epe" ,
+            "images": {
+                "main": "/images/house4/image1.png",
+                "others": [
+                    "/images/house4/image2.png",
+                    "/images/house4/image3.png",
+                    "/images/house4/image4.png",
+                    "/images/house4/image5.png"
+                    ]
+            },
+            "location": "Gelderland, Netherlands",
+            "likes": 0,
+            "description": "A cozy and spacious nature house, beautifully situated on the Veluwe, within walking distance of estate Tongeren and the forest area of Wissel, on a private plot of 1385 m2. Our recreation house we have built with care in 2022. Characteristic is the warm and relaxed atmosphere, with lots of light. The house is well insulated, with space for 5 people (100 m2 living space).",
+            "facilities": "3 bedrooms 5 persons" ,
+            "sustainability": "Energy label: A    Off grid or supplied with 100% renewable Energy   Built with natural building materials",
+            "price": 1,
+            "type":"for rent"
+        },
+        {
+            "id": 5,
+            "title": "Nature house in Eynatten" ,
+            "images": {
+                "main": "/images/house5/image1.png",
+                "others": [
+                    "/images/house5/image2.png",
+                    "/images/house5/image3.png",
+                    "/images/house5/image4.png",
+                    "/images/house5/image5.png"
+                    ]
+            },
+            "location": "Liège, Belgium",
+            "likes": 0,
+            "description": "Our detached tiny house in the border triangle offers everything you need to relax in a small space. Warm wooden elements create a cozy atmosphere, while large panoramic windows make the interior feel bright and open.",
+            "facilities": "1 bedroom 2 persons" ,
+            "sustainability": "Energy label: A    Off grid or supplied with 100% renewable Energy  Natural Insulation materials",
+            "price": 1,
+            "type":"for rent"  
+        },
+        {
+            "id": 6,
+            "title": "name of the location" ,
+            "images": {
+                "main": "/images/house6/image1.png",
+                "others": [
+                    "/images/house6/image2.png",
+                    "/images/house6/image3.png",
+                    "/images/house6/image4.png",
+                    "/images/house6/image5.png"
+                    ]
+            },
+            "location": "Fox Hill Rd, Lafayette Township, New Jersey",
+            "likes": 0,
+            "description": "Step into a lifestyle of sustainable luxury in this architect-designed, NET ZERO SOLAR ENERGY HOME! Imagine walking into sunlight streaming through the dramatic two-story sunspace, a central feature that fills the home w/warmth & light. This home embraces sustainable living. Efficient mass walls & solar hot water minimize energy consumption, while 5 individual, high-efficiency heat pumps provide zoned climate control. ",
+            "facilities": "3 bedrooms",
+            "sustainability": "Efficient mass walls & solar hot water minimize energy consumption, while 5 individual, high-efficiency heat pumps provide zoned climate control.",
+            "price": 1,  
+            "type":"for sale" 
+        },
+        {
+            "id": 7,
+            "title": "Nature house in Dwingeloo" ,
+            "images": {
+                "main": "/images/house7/image1.png",
+                "others": [
+                    "/images/house7/image2.png",
+                    "/images/house7/image3.png",
+                    "/images/house7/image4.png",
+                    "/images/house7/image5.png"
+                    ]
+            },
+            "location": "Drenthe, Netherlands",
+            "likes": 0,
+            "description": "The wooden mobile home stands in a beautiful spot in the landlords' yard. The nature house is built entirely of wood and insulated with natural materials. The mobile home has electric heating (IR panels), but this only serves to keep out the worst cold, for a pleasant room temperature you need to fire up the wood stove.",
+            "facilities": "2 bedrooms 3 persons" ,
+            "sustainability": "Off grid or supplied with 100% renewable Energy  Natural Insulation materials  Built with natural building materials",
+            "price": 1,
+            "type": "for sale"  
+        },
+        {
+            "id": 8,
+            "title": "Nature house in Hezingen nabij Ootmarsum" ,
+            "images": {
+                "main": "/images/house8/image1.png",
+                "others": [
+                    "/images/house8/image2.png",
+                    "/images/house8/image3.png",
+                    "/images/house8/image4.png",
+                    "/images/house8/image5.png"
+                    ]
+            },
+            "location": "Overijssel, Netherlands",
+            "likes": 0,
+            "description": "n the middle of the forest you can find this quietly located 10-person nature house. The perfect place to enjoy the beautiful nature. This cottage is not on a park or campsite, but free in the forest, so you can fully enjoy the peace, space and privacy. The cottage has a private driveway and paving around the entire house.",
+            "facilities": "5 bedrooms 10 persons" ,
+            "sustainability": "Off grid or supplied with 100% renewable  Energy Natural Insulation materials",
+            "price": 1,
+            "type":"for sale"
+        },
+        {
+            "id": 9,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 10,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 11,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 12,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1
+        },
+        {
+            "id": 13,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 14,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 15,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 16,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1
+        },
+        {
+            "id": 17,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        },
+        {
+            "id": 18,
+            "title": "name of the location" ,
+            "image": "",
+            "location": "",
+            "likes": 0,
+            "description": "",
+            "facilities": "" ,
+            "price": 1  
+        }
+    ]
+}
