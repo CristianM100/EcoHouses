@@ -17,7 +17,7 @@
             "description": "Unwind and relax in our sustainable homemade Tiny house.Through the large windows you will experience the real indoor-outdoor feeling in the countryside. The Tiny house is equipped with air conditioning, kitchen, bathroom and a double bed for two persons.",
             "facilities": "2 Persoons 1 bedroom",
             "sustainability": "Energy label: A    Off grid or supplied with 100% renewable Energy   Sustainable inventory",
-            "price": 1,
+            "price": 2,
             "type": "for rent"  
         },
         {
@@ -142,7 +142,7 @@
         },
         {
             "id": 8,
-            "title": "Nature house in Hezingen nabij Ootmarsum" ,
+            "title": "Nature house in Hezingen" ,
             "images": {
                 "main": "/images/house8/image1.png",
                 "others": [
@@ -159,106 +159,7 @@
             "sustainability": "Off grid or supplied with 100% renewable  Energy Natural Insulation materials",
             "price": 1,
             "type":"for sale"
-        },
-        {
-            "id": 9,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 10,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 11,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 12,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1
-        },
-        {
-            "id": 13,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 14,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 15,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 16,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1
-        },
-        {
-            "id": 17,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
-        },
-        {
-            "id": 18,
-            "title": "name of the location" ,
-            "image": "",
-            "location": "",
-            "likes": 0,
-            "description": "",
-            "facilities": "" ,
-            "price": 1  
         }
+       
     ]
 }
