@@ -1,25 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
-import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import PropertyList from './components/PropertyList';
 //import './App.css';
 
 function App() {
   return (
-    <Router> 
-      <Header />
-      {/*<Routes>
-        <Route path="/" element={<Hero />} />
+    <div className=''>
+      <Router> 
+        <Header />
+        {/*<Routes>
+          <Route path="/" element={<Hero />} />
         
-      </Routes>*/}
-      <Hero />
-      <Footer />
-    </Router>
+        </Routes>*/}
+        <PropertyList />
+        <Footer />
+     </Router>
+    </div>
   );
 }
 
 export default App;
 
-/*
-Instaleaza tailwindul cap de duda 
-cand programul nu isi schimba style ce plm meu ar trebui decat ca i lipseste CSS aka tailwind etc boulee*/
