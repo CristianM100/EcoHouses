@@ -24,6 +24,9 @@ function Header() {
                     <li className='mr-1 text-sm font-medium uppercase tracking-wider'>
                         <Link to='/sale'>For sale</Link>
                     </li>
+                    <li className='mr-1 text-sm font-medium uppercase tracking-wider'>
+                        <Link to="/add-property" className="bg-green-500 text-white p-2 rounded">+ Add Property</Link>
+                    </li>
                     <li>
                         <label htmlFor="inputSearch" className="sr-only">Search</label>
                         <input
