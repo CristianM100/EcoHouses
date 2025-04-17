@@ -2,9 +2,9 @@ import React from "react";
 import { BsStarFill } from "react-icons/bs";
 import {Link} from "react-router-dom";
 
-export function Property({ title, images, location, likes, description, facilities, sustainability, price, type })  {
+export function Property({ id, title, images, location, likes, description, facilities, sustainability, price, type })  {
     return (
-        <Link to='' className="border border-gray-400 rounded-lg p-3">
+        <Link to={`/properties/${id}`} className="border border-gray-400 rounded-lg p-3">
 
             <div className="relative">
                 <div className="grad absolute w-full h-full rounded-b-[1.3rem]"></div>
