@@ -27,7 +27,7 @@ export function AddProperty() {
         </header>
     
             <AddPropertyForm />
-            <Footer />
+           {/* <Footer /> */}
         </>
     )
 }
