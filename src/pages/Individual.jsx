@@ -1,6 +1,6 @@
 import PropertyDetail from '../components/PropertyDetail';
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 
 export function Individual() {
@@ -18,7 +18,7 @@ export function Individual() {
                 </div>
 
                 <ul className='text-black flex items-center gap-30'>
-                    <li className='ml-2 text-sm font-medium uppercase tracking-wider'>
+                    <li className='mr-10 text-sm font-medium uppercase tracking-wider'>
                         <Link to='/'>Home</Link>
                     </li>
                     
@@ -27,7 +27,7 @@ export function Individual() {
         </header>
     
             <PropertyDetail />
-            <Footer />
+           {/* <Footer /> */}
         </>
     )
 }
