@@ -19,9 +19,9 @@ const Footer = () => {
         <div className="w-3/3">
           <h3 className="text-xl font-semibold">Quick Links</h3>
           <ul>
-            <li><Link to="/home" className="text-stone-400 hover:text-white">Home</Link></li>
-            <li><Link to="/sale" className="text-stone-400 hover:text-white">For sale</Link></li>
-            <li><Link to="/rent" className="text-stone-400 hover:text-white">For rent</Link></li>
+            <li><Link to="/" className="text-stone-400 hover:text-black">Home</Link></li>
+            <li><Link to="/sale" className="text-stone-400 hover:text-black">For sale</Link></li>
+            <li><Link to="/rent" className="text-stone-400 hover:text-black">For rent</Link></li>
           </ul>
         </div>
 
