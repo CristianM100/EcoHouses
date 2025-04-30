@@ -5,49 +5,43 @@ import {Link} from "react-router-dom";
 export function Property({ id, title, images, location, likes, description, facilities, sustainability, price, type })  {
     return (
         <Link to={`/properties/${id}`} className="border border-gray-400 rounded-lg p-3">
-
             <div className="relative">
                 <div className="grad absolute w-full h-full rounded-b-[1.3rem]"></div>
-                    <div className="flex ">
-                        {/* Background */}
-                        <img
-                            src={images}
-                            alt=""
-                            className="object-cover rounded-[1.3rem] sm:h-[17rem]  md:h-[13rem] w-full"
-                        />
-                        {/* Title */}
-                        <div className="absolute text-white font-bold bottom-6 left-6 text-[22px] flex items-center gap-2">
-                            {title}
-                            <span>&#x2022;</span>
-                            <p className="text-[18px] text-slate-200"> ${price}</p>
-                        </div>
+                <div className="flex">
+                    <img
+                        src={images?.main || '/images/placeholder.png'}
+                        alt={title}
+                        className="object-cover rounded-[1.3rem] sm:h-[17rem] md:h-[13rem] w-full"
+                    />
+                    <div className="absolute text-white font-bold bottom-6 left-6 text-[22px] flex items-center gap-2">
+                        {title}
+                        <span>&#x2022;</span>
+                        <p className="text-[18px] text-slate-200"> ${price}</p>
                     </div>
+                </div>
             </div>
-            {/* Description */}
             <div className="pt-3 flex justify-between items-start">
-                {/* Left */}
-                <div className="">
+                <div>
                     <p className="max-w-[17rem] font-semibold text-[17px]">
-                        This is a rare find
+                        {location}
                     </p>
-                    <p className="max-w-[17rem]  text-[16px] -mt-1 text-gray-500">
-                        Jan 28 - Aug 9
+                    <p className="max-w-[17rem] text-[16px] -mt-1 text-gray-500">
+                        {facilities}
                     </p>
                     <p className="max-w-[17rem] font-semibold text-[17px]">${price}</p>
                 </div>
-                {/* Right */}
                 <div className="flex items-center space-x-1">
                     <div>
                         <div className="flex items-center space-x-1">
                             <BsStarFill />
-                            <p className="text-[15px]">5.0</p>
+                            <p className="text-[15px]">{likes}</p>
                         </div>
                         <p className="text-[15px] rounded p-1 bg-orange-300">{type}</p>
                     </div>
                 </div>
             </div>
         </Link>
-      );    
+    );    
 }
 
 export default Property;

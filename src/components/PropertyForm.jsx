@@ -1,14 +1,10 @@
-import { useState } from "react";
-import { usePropertyContext } from "../context/PropertyContext";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { usePropertyContext } from '../context/PropertyContext';
 
-
-
-function AddPropertyForm() {
+function PropertyForm({ initialData, onSubmit, isEdit = false }) {
   const { addProperty } = usePropertyContext();
   const navigate = useNavigate();
-  
-  // Separate state for previews
   const [mainImagePreview, setMainImagePreview] = useState(null);
   const [otherImagePreviews, setOtherImagePreviews] = useState([]);
   
@@ -25,6 +21,27 @@ function AddPropertyForm() {
       others: []
     },
   });
+
+  // Initialize form with initialData if in edit mode
+  useEffect(() => {
+    if (isEdit && initialData) {
+      setFormData(prev => ({
+        ...prev,
+        ...initialData,
+        images: {
+          main: initialData.images?.main || null,
+          others: initialData.images?.others || []
+        }
+      }));
+      if (initialData.images?.main) {
+        setMainImagePreview(initialData.images.main);
+      }
+      if (initialData.images?.others) {
+        setOtherImagePreviews(initialData.images.others);
+      }
+    }
+  }, [isEdit, initialData]);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -77,7 +94,6 @@ function AddPropertyForm() {
   };
 
   const removeOtherImage = (index) => {
-    // Remove from both the form data and previews
     setFormData(prev => {
       const updatedOthers = [...prev.images.others];
       updatedOthers.splice(index, 1);
@@ -97,15 +113,23 @@ function AddPropertyForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addProperty(formData);
-    navigate("/"); // or redirect to property list
+    if (isEdit && onSubmit) {
+      onSubmit(formData);
+    } else {
+      try {
+        await addProperty(formData);
+        navigate("/");
+      } catch (error) {
+        console.error("Error adding property:", error);
+      }
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="p-6 max-w-md mx-auto space-y-4">
-      <h2 className="text-xl font-bold">Add New Property</h2>
+      <h2 className="text-xl font-bold">{isEdit ? 'Edit Property' : 'Add New Property'}</h2>
       
       <div>
         <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
@@ -198,7 +222,6 @@ function AddPropertyForm() {
         </select>
       </div>
       
-      {/* Main Image Input */}
       <div>
         <label htmlFor="mainImage" className="block text-sm font-medium text-gray-700">Main Property Image</label>
         <input 
@@ -208,10 +231,9 @@ function AddPropertyForm() {
           onChange={handleMainImageChange} 
           className="file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold
                  file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 w-full text-sm text-gray-500 border p-2 rounded"
-          required
+          required={!isEdit}
         />
         
-        {/* Main Image Preview */}
         {mainImagePreview && (
           <div className="mt-2">
             <p className="text-sm text-gray-500">Preview:</p>
@@ -224,7 +246,6 @@ function AddPropertyForm() {
         )}
       </div>
       
-      {/* Other Images Input */}
       <div>
         <label htmlFor="otherImages" className="block text-sm font-medium text-gray-700">Additional Property Images</label>
         <input 
@@ -237,7 +258,6 @@ function AddPropertyForm() {
           multiple
         />
         
-        {/* Other Images Preview */}
         {otherImagePreviews.length > 0 && (
           <div className="mt-2">
             <p className="text-sm text-gray-500">Previews:</p>
@@ -268,10 +288,10 @@ function AddPropertyForm() {
         type="submit" 
         className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full"
       >
-        Add Property
+        {isEdit ? 'Update Property' : 'Add Property'}
       </button>
     </form>
   );
 }
 
-export default AddPropertyForm;
+export default PropertyForm;

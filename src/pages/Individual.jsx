@@ -1,6 +1,5 @@
 import PropertyDetail from '../components/PropertyDetail';
 import { Link } from "react-router-dom";
-// import Footer from "../components/Footer";
 
 
 export function Individual() {
@@ -25,9 +24,8 @@ export function Individual() {
                 </ul>    
             </nav>
         </header>
-    
+
             <PropertyDetail />
-           {/* <Footer /> */}
         </>
     )
 }

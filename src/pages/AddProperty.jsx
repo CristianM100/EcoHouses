@@ -1,6 +1,5 @@
-import AddPropertyForm from '../components/AddPropertyForm';
+import PropertyForm from '../components/PropertyForm';
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 
 
 export function AddProperty() {
@@ -25,9 +24,7 @@ export function AddProperty() {
                 </ul>    
             </nav>
         </header>
-    
-            <AddPropertyForm />
-           {/* <Footer /> */}
+            <PropertyForm />
         </>
     )
 }

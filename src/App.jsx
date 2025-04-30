@@ -4,7 +4,9 @@ import Sale from './pages/Sale';
 import Home from './pages/Home';
 import Individual from './pages/Individual';
 import { PropertyProvider } from './context/PropertyContext';
-import AddProperty from './pages/AddProperty';
+import PropertyForm from './components/PropertyForm';
+import AddPropertyPage from './pages/AddPropertyPage';
+import EditPropertyPage from './pages/EditPropertyPage';
 
 function App() {
   return (
@@ -12,14 +14,15 @@ function App() {
       <Router> 
         <PropertyProvider>
           <Routes>
-            <Route path="/" element={<Home  />} />
-            <Route path="/rent" element={<Rent  />} />
-            <Route path="/sale" element={<Sale  />} />
-            <Route path="/properties/:id" element={<Individual  />} />
-            <Route path="/add-property" element={<AddProperty />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/rent" element={<Rent />} />
+            <Route path="/sale" element={<Sale />} />
+            <Route path="/properties/:id" element={<Individual />} />
+            <Route path="/add-property" element={<AddPropertyPage />} />
+            <Route path="/edit-property/:id" element={<EditPropertyPage />} />
           </Routes>
         </PropertyProvider>
-     </Router>
+      </Router>
     </div>
   );
 }
