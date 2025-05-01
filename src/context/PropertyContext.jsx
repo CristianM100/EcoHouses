@@ -12,6 +12,10 @@ export const PropertyProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // In PropertyProvider component
+  const [searchQuery, setSearchQuery] = useState('');
+
+
   useEffect(() => {
     const fetchProperties = async () => {
       console.log("Starting to fetch properties...");
@@ -115,7 +119,9 @@ export const PropertyProvider = ({ children }) => {
       updateProperty,
       deleteProperty,
       likeProperty,
-      addProperty
+      addProperty,
+      searchQuery,
+      setSearchQuery
     }}>
       {children}
     </PropertyContext.Provider>

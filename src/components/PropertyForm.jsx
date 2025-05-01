@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePropertyContext } from '../context/PropertyContext';
 
+
+
+
+
+
+
 function PropertyForm({ initialData, onSubmit, isEdit = false }) {
   const { addProperty } = usePropertyContext();
   const navigate = useNavigate();

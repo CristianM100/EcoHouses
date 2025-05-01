@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import { usePropertyContext } from '../context/PropertyContext'; 
 
 function Header() {
     
+    const { searchQuery, setSearchQuery } = usePropertyContext();
+
+    const handleInputChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
+
     return (
         <header className='flex text-center z-10 py-10 px-5 text-stone-400'>
             <nav className='container flex items-center justify-between ml-10'>
@@ -34,6 +41,9 @@ function Header() {
                             name="inputSearch"
                             type="text"
                             placeholder="Search"
+                            value={searchQuery}
+                            //onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={handleInputChange}
                             className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </li>

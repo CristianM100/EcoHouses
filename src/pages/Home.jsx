@@ -1,7 +1,107 @@
 import PropertyList from '../components/PropertyList';
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer"
+import React, { useState, useEffect } from 'react';
+import { usePropertyContext } from '../context/PropertyContext';
 
+
+export function Home() {
+    const { properties, loading, error } = usePropertyContext();
+    const { searchQuery } = usePropertyContext(); // Access the global search query
+  
+    const [sort, setSort] = useState('price-asc');
+    const [currentPage, setCurrentPage] = useState(1);
+    const resultsPerPage = 6;
+  
+    const handleSortChange = (e) => setSort(e.target.value);
+  
+    // Filter properties based on the global search query
+    const filtered = properties.filter((p) =>
+      p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  
+    const sorted = [...filtered].sort((a, b) => {
+      switch (sort) {
+        case 'price-asc': return a.price - b.price;
+        case 'price-desc': return b.price - a.price;
+        case 'name-asc': return a.title.localeCompare(b.title);
+        case 'name-desc': return b.title.localeCompare(a.title);
+        default: return 0;
+      }
+    });
+  
+    const totalPages = Math.ceil(sorted.length / resultsPerPage);
+    const paginated = sorted.slice(
+      (currentPage - 1) * resultsPerPage,
+      currentPage * resultsPerPage
+    );
+  
+    const goToPreviousPage = () => {
+      if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+    };
+  
+    const goToNextPage = () => {
+      if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+    };
+  
+    useEffect(() => {
+      setCurrentPage(1);
+    }, [searchQuery, sort]);
+  
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
+  
+    return (
+      <>
+        <Header />
+        <div className="p-4">
+          <h1 className="text-xl mb-4">All Properties</h1>
+  
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
+            <select
+              value={sort}
+              onChange={handleSortChange}
+              className="ml-auto border p-1 rounded w-full sm:w-1/7"
+            >
+              <option value="price-asc">Price Low → High</option>
+              <option value="price-desc">Price High → Low</option>
+              <option value="name-asc">Name A → Z</option>
+              <option value="name-desc">Name Z → A</option>
+            </select>
+          </div>
+  
+          <PropertyList properties={paginated} />
+  
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={goToPreviousPage}
+              disabled={currentPage === 1}
+              className="px-4 py-2 bg-gray-300 mx-2 rounded disabled:opacity-50"
+            >
+              Prev
+            </button>
+            <span className="px-4 py-2">{currentPage} / {totalPages}</span>
+            <button
+              onClick={goToNextPage}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 bg-gray-300 mx-2 rounded disabled:opacity-50"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+  
+  export default Home;
+  
+
+
+
+/*
 export function Home() {
     return(
         <>
@@ -13,4 +113,4 @@ export function Home() {
     )
 }
 
-export default Home;
+export default Home;*/
