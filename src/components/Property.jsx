@@ -15,8 +15,8 @@ export function Property({ id, title, images, location, likes, description, faci
                     />
                     <div className="absolute text-white font-bold bottom-6 left-6 text-[22px] flex items-center gap-2">
                         {title}
-                        <span>&#x2022;</span>
-                        <p className="text-[18px] text-slate-200"> ${price}</p>
+                       {/* <span>&#x2022;</span>
+                        <p className="text-[18px] text-slate-200"> ${price}</p>*/}
                     </div>
                 </div>
             </div>
