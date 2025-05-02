@@ -21,6 +21,7 @@ function PropertyForm({ initialData, onSubmit, isEdit = false }) {
     facilities: "",
     sustainability: "",
     price: "",
+    favorite: "",
     type: "for rent",
     images: {
       main: null,

@@ -17,7 +17,7 @@ function PropertyList({ properties }) {
             title={property.title}
             images={property.images}
             location={property.location}
-            likes={property.likes}
+            favorite={property.favorite}
             description={property.description}
             facilities={property.facilities}
             sustainability={property.sustainability}

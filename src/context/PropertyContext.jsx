@@ -1,4 +1,59 @@
 /* eslint-disable react-refresh/only-export-components */
+// src/contexts/PropertyContext.js
+
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { fetchPropertiesFromBackend } from '../http';  // Import the fetch function from api.js
+import { updateProperty, deleteProperty, addToFavourites, addPropertyAsync } from '../http'; // Import all functions for actions
+
+// Create the PropertyContext to be used across the app
+const PropertyContext = createContext();
+
+// Custom hook to use PropertyContext
+export const usePropertyContext = () => useContext(PropertyContext);
+
+// The PropertyProvider component that wraps around your app to provide context values
+export const PropertyProvider = ({ children }) => {
+  const [properties, setProperties] = useState([]);  // State to store the list of properties
+  const [loading, setLoading] = useState(true);      // State to indicate loading state
+  const [error, setError] = useState(null);          // State to store any errors
+  const [searchQuery, setSearchQuery] = useState(''); // State for search query
+
+  // Fetch properties from the backend when the component mounts
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const data = await fetchPropertiesFromBackend();  // Fetch properties using the API function
+        setProperties(data);  // Update the properties state with the fetched data
+        setLoading(false);     // Set loading to false after the data is fetched
+      } catch (err) {
+        setError(err.message);  // Set error state in case of failure
+        setLoading(false);      // Set loading to false after error
+      }
+    };
+
+    fetchProperties();  // Call the function to fetch properties when component mounts
+  }, []); // Empty dependency array ensures this only runs on initial mount
+
+  // Return the context provider to wrap your app with the necessary data
+  return (
+    <PropertyContext.Provider value={{
+      properties,           // The list of properties
+      loading,              // Whether the data is still being fetched
+      error,                // Any error that occurred during fetching
+      searchQuery,          // The current search query
+      setSearchQuery,       // Function to update the search query
+      updateProperty: (property) => updateProperty(property, setProperties),
+      deleteProperty: (id) => deleteProperty(id, setProperties),
+      addToFavourites: (id) => addToFavourites(id, setProperties),
+      addProperty: (property) => addPropertyAsync(property, properties, setProperties, setError),
+    }}>
+      {children}  {/* Render the children components */}
+    </PropertyContext.Provider>
+  );
+};
+
+
+/*
 import { createContext, useContext, useState, useEffect } from "react";
 
 
@@ -6,8 +61,8 @@ import {
   addPropertyAsync,
   updateProperty,
   deleteProperty,
-  likeProperty,
-  toggleFavorite
+ // likeProperty,
+  addToFavourites
 } from '../http'; // Adjust the path as needed
 
 const PropertyContext = createContext();
@@ -46,8 +101,8 @@ export const PropertyProvider = ({ children }) => {
       setSearchQuery,
       updateProperty: (property) => updateProperty(property, setProperties),
       deleteProperty: (id) => deleteProperty(id, setProperties),
-      likeProperty: (id) => likeProperty(id, setProperties),
-      toggleFavorite: (id) => toggleFavorite(id, setProperties),
+    //  likeProperty: (id) => likeProperty(id, setProperties),
+      addToFavourites: (id) => addToFavourites(id, setProperties),
       addProperty: (property) => addPropertyAsync(property, properties, setProperties, setError),
     }}>
       {children}
@@ -57,16 +112,7 @@ export const PropertyProvider = ({ children }) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 /*

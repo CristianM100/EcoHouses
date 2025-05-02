@@ -11,7 +11,7 @@ export function Home() {
   
     const [sort, setSort] = useState('price-asc');
     const [currentPage, setCurrentPage] = useState(1);
-    const resultsPerPage = 6;
+    const resultsPerPage = 8;
   
     const handleSortChange = (e) => setSort(e.target.value);
   
