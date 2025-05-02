@@ -1,3 +1,16 @@
+export const fetchPropertiesFromBackend = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/properties");
+    if (!response.ok) throw new Error("Failed to fetch properties");
+    const data = await response.json();
+    return data; // Return the fetched data
+  } catch (err) {
+    console.error(err);
+    throw new Error(err.message); // Rethrow the error for the caller to handle
+  }
+};
+
+
 
 export const addPropertyAsync = async (newProperty, properties, setProperties, setError) => {
   try {
@@ -34,18 +47,31 @@ export const deleteProperty = (id, setProperties) => {
   setProperties(prev => prev.filter(p => p.id !== id));
 };
 
-export const likeProperty = (id, setProperties) => {
-  setProperties(prev =>
-    prev.map(p =>
-      p.id === id ? { ...p, likes: p.likes + 1 } : p
-    )
-  );
-};
 
-export const toggleFavorite = (id, setProperties) => {
+
+export const addToFavourites = async (id, setProperties) => {
   setProperties(prev =>
     prev.map(p =>
       p.id === id ? { ...p, favorite: !p.favorite } : p
     )
   );
+    
+
+  // Find the current favorite status to toggle
+  const currentProperty = await fetch(`http://localhost:3000/properties/${id}`);
+  const data = await currentProperty.json();
+  const updatedFavorite = !data.favorite;
+
+  // Update the favorite in the backend (db.json)
+  try {
+    await fetch(`http://localhost:3000/properties/${id}`, {
+      method: "PATCH", // or PUT if replacing the whole object
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ favorite: updatedFavorite }),
+    });
+  } catch (err) {
+    console.error("Failed to update favorite status in backend:", err);
+  }
 };
