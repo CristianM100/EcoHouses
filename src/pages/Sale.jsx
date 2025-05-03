@@ -59,20 +59,24 @@ export function Sale() {
     return (
       <>
         <Header />
-        <div className="p-4">
-          <h1 className="text-xl mb-4">Sale Properties</h1>
-  
+        <div className="p-4 mb-5">
+          <h1 className="text-3xl md:text-4xl ml-9 mb-6 mt-10 font-bold text-gray-500 transition-colors duration-300 hover:text-green-700">
+            Sale Properties
+          </h1>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
-            <select
-              value={sort}
-              onChange={handleSortChange}
-              className="ml-auto border p-1 rounded w-full sm:w-1/7"
-              >
-              <option value="price-asc">Price Low → High</option>
-              <option value="price-desc">Price High → Low</option>
-              <option value="name-asc">Name A → Z</option>
-              <option value="name-desc">Name Z → A</option>
-            </select>
+            <div className="w-full sm:w-auto sm:flex-1"></div> 
+              <div className="w-full sm:w-auto flex justify-end">
+                <select
+                  value={sort}
+                  onChange={handleSortChange}
+                  className="border p-2 mr-6 rounded-lg w-full sm:w-40 text-sm shadow-sm"
+                >
+                  <option value="price-asc">Price Low → High</option>
+                  <option value="price-desc">Price High → Low</option>
+                  <option value="name-asc">Name A → Z</option>
+                  <option value="name-desc">Name Z → A</option>
+                </select>
+              </div>
           </div>
   
           <PropertyList properties={paginatedProperties} />

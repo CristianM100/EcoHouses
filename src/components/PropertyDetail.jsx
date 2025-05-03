@@ -80,8 +80,8 @@ function PropertyDetail() {
             const src = image || '/images/placeholder.png';
             return (
               <img
-                key={`${src}-${index}`} 
-               // key={image.id}
+                //key={`${src}-${index}`} 
+                key={image.id}
                 src={src}
                 alt={`${property.title} - ${index}`}
                 className="rounded-lg w-full h-auto"
