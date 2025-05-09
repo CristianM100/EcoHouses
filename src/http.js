@@ -11,10 +11,9 @@ export const fetchPropertiesFromBackend = async () => {
 };
 
 
-
 export const addPropertyAsync = async (newProperty, properties, setProperties, setError) => {
   try {
-    const propertyWithId = { ...newProperty, likes: 0 }; // No ID assigned manually
+    const propertyWithId = { ...newProperty}; // No ID assigned manually
 
     const response = await fetch("http://localhost:3000/properties", {
       method: "POST",
