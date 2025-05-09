@@ -19,7 +19,7 @@ function Header() {
         {/* Logo */}
         <div>
           <NavLink to="/" className="text-green-800 text-2xl font-bold tracking-widest">
-            EcoHomes
+            EcoHouses
           </NavLink>
         </div>
 
@@ -59,7 +59,7 @@ function Header() {
               placeholder="Search"
               value={searchQuery}
               onChange={handleInputChange}
-              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700 text-sm"
             />
           </li>
         </ul>

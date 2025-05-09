@@ -12,7 +12,7 @@ export function Individual() {
                         to='/'
                         className='text-green-800 text-2xl font-bold tracking-widest'
                     >
-                        EcoHomes
+                        EcoHouses
                     </Link>
                 </div>
 

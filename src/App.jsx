@@ -4,7 +4,6 @@ import Sale from './pages/Sale';
 import Home from './pages/Home';
 import Individual from './pages/Individual';
 import { PropertyProvider } from './context/PropertyContext';
-import PropertyForm from './components/PropertyForm';
 import AddPropertyPage from './pages/AddPropertyPage';
 import EditPropertyPage from './pages/EditPropertyPage';
 

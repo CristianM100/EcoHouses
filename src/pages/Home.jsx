@@ -11,7 +11,7 @@ export function Home() {
   
     const [sort, setSort] = useState('price-asc');
     const [currentPage, setCurrentPage] = useState(1);
-    const resultsPerPage = 8;
+    const resultsPerPage = 6;
   
     const handleSortChange = (e) => setSort(e.target.value);
   
@@ -66,7 +66,7 @@ export function Home() {
                 <select
                   value={sort}
                   onChange={handleSortChange}
-                  className="border p-2 mr-6 rounded-lg w-full sm:w-40 text-sm shadow-sm"
+                  className="border p-2 mr-10 rounded-lg w-full sm:w-40 text-sm shadow-sm"
                 >
                   <option value="price-asc">Price Low → High</option>
                   <option value="price-desc">Price High → Low</option>

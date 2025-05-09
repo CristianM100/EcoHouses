@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 
 function AddPropertyPage() {
-  //return <PropertyForm />;
   return (
     <>
       <header className='flex text-center  z-10 py-10 px-5 text-stone-400'>
@@ -38,17 +37,3 @@ export default AddPropertyPage;
 
 
 
-/*
-function AddPropertyPage() {
-  const { addProperty } = usePropertyContext();
-  const navigate = useNavigate();
-
-  const handleAdd = (data) => {
-    addProperty(data);
-    navigate("/");
-  };
-
-  return <PropertyForm onSubmit={handleAdd} />;
-}
-
-export default AddPropertyPage;*/

@@ -6,7 +6,6 @@ import { usePropertyContext } from "../context/PropertyContext";
 
 
 
-
 function EditPropertyPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -56,7 +55,7 @@ function EditPropertyPage() {
       const propertyToUpdate = {
         ...updatedData,
         id: property.id, // Use the id from the property object which has the correct format
-        likes: property.likes || 0 // preserve likes count
+       // likes: property.likes || 0 // preserve likes count
       };
       
       console.log("Updating property with ID:", id);
@@ -127,6 +126,7 @@ function EditPropertyPage() {
 }
 
 export default EditPropertyPage;
+
 
 
 /*

@@ -1,9 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-// src/contexts/PropertyContext.js
-
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { fetchPropertiesFromBackend } from '../http';  // Import the fetch function from api.js
 import { updateProperty, deleteProperty, addToFavourites, addPropertyAsync } from '../http'; // Import all functions for actions
+
+
+
 
 // Create the PropertyContext to be used across the app
 const PropertyContext = createContext();
@@ -51,6 +52,7 @@ export const PropertyProvider = ({ children }) => {
     </PropertyContext.Provider>
   );
 };
+
 
 
 /*
