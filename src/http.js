@@ -55,7 +55,6 @@ export const addToFavourites = async (id, setProperties) => {
     )
   );
     
-
   // Find the current favorite status to toggle
   const currentProperty = await fetch(`http://localhost:3000/properties/${id}`);
   const data = await currentProperty.json();
