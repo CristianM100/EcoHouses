@@ -5,7 +5,6 @@ import { updateProperty, deleteProperty, addToFavourites, addPropertyAsync } fro
 
 
 
-
 // Create the PropertyContext to be used across the app
 const PropertyContext = createContext();
 
