@@ -7,6 +7,7 @@ import { PropertyProvider } from './context/PropertyContext';
 import AddPropertyPage from './pages/AddPropertyPage';
 import EditPropertyPage from './pages/EditPropertyPage';
 
+
 function App() {
   return (
     <div className=''>

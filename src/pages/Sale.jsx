@@ -1,14 +1,14 @@
 import PropertyList from "../components/PropertyList";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { usePropertyContext } from '../context/PropertyContext';
 
 
 
 export function Sale() {
     const { properties, loading, error } = usePropertyContext();
-    const { searchQuery } = usePropertyContext(); // Access the global search query
+    const { searchQuery } = usePropertyContext(); 
   
     const [sort, setSort] = useState('price-asc');
     const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +16,6 @@ export function Sale() {
   
     const handleSortChange = (e) => setSort(e.target.value);
   
-    // Filter properties by type (Sale properties only) and search query
     const saleProperties = properties.filter((p) => p.type === "for sale");
   
     const filteredProperties = saleProperties.filter((p) =>
@@ -50,7 +49,7 @@ export function Sale() {
     };
   
     useEffect(() => {
-      setCurrentPage(1); // Reset to page 1 when search or sort changes
+      setCurrentPage(1); 
     }, [searchQuery, sort]);
   
     if (loading) return <p>Loading...</p>;
@@ -83,6 +82,7 @@ export function Sale() {
   
           <div className="flex justify-center mt-6">
             <button
+              type="button"
               onClick={goToPreviousPage}
               disabled={currentPage === 1}
               className="px-4 py-2 bg-gray-300 mx-2 rounded disabled:opacity-50"
@@ -91,6 +91,7 @@ export function Sale() {
             </button>
             <span className="px-4 py-2">{currentPage} / {totalPages}</span>
             <button
+              type="button"
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
               className="px-4 py-2 bg-gray-300 mx-2 rounded disabled:opacity-50"
@@ -118,17 +119,3 @@ export function Sale() {
 
 
 
-
-/*
-export function Sale() {
-    return(
-        <>
-            <Header />
-            <div>this is sale page</div>
-            <PropertyList filterProperties="for sale"/>
-            <Footer />
-        </>
-    )
-}
-
-export default Sale;*/

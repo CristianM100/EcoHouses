@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { LiaAddressBookSolid } from "react-icons/lia";
+
+
 
 const Footer = () => {
   return (

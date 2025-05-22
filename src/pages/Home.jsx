@@ -1,21 +1,20 @@
 import PropertyList from '../components/PropertyList';
 import Header from "../components/Header";
 import Footer from "../components/Footer"
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { usePropertyContext } from '../context/PropertyContext';
+
 
 
 export function Home() {
     const { properties, loading, error } = usePropertyContext();
-    const { searchQuery } = usePropertyContext(); // Access the global search query
-  
+    const { searchQuery } = usePropertyContext(); 
     const [sort, setSort] = useState('price-asc');
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 6;
   
     const handleSortChange = (e) => setSort(e.target.value);
   
-    // Filter properties based on the global search query
     const filtered = properties.filter((p) =>
       p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -106,16 +105,5 @@ export function Home() {
 
 
 
-/*
-export function Home() {
-    return(
-        <>
-            <Header />
-            <div>this is home page</div>
-            <PropertyList filterProperties="all"/>
-            <Footer />
-        </>
-    )
-}
 
-export default Home;*/
+

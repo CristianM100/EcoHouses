@@ -1,19 +1,20 @@
+
 export const fetchPropertiesFromBackend = async () => {
   try {
     const response = await fetch("http://localhost:3000/properties");
     if (!response.ok) throw new Error("Failed to fetch properties");
     const data = await response.json();
-    return data; // Return the fetched data
+    return data; 
   } catch (err) {
     console.error(err);
-    throw new Error(err.message); // Rethrow the error for the caller to handle
+    throw new Error(err.message); 
   }
 };
 
 
 export const addPropertyAsync = async (newProperty, properties, setProperties, setError) => {
   try {
-    const propertyWithId = { ...newProperty}; // No ID assigned manually
+    const propertyWithId = { ...newProperty}; 
 
     const response = await fetch("http://localhost:3000/properties", {
       method: "POST",
@@ -23,7 +24,7 @@ export const addPropertyAsync = async (newProperty, properties, setProperties, s
 
     if (!response.ok) throw new Error("Failed to add property");
 
-    const addedProperty = await response.json(); // This now has the correct, backend-generated ID
+    const addedProperty = await response.json(); 
     setProperties(prev => [...prev, addedProperty]);
     return addedProperty;
   } catch (error) {
@@ -41,11 +42,9 @@ export const updateProperty = (updatedProperty, setProperties) => {
 };
 
 
-
 export const deleteProperty = (id, setProperties) => {
   setProperties(prev => prev.filter(p => p.id !== id));
 };
-
 
 
 export const addToFavourites = async (id, setProperties) => {
@@ -55,15 +54,13 @@ export const addToFavourites = async (id, setProperties) => {
     )
   );
     
-  // Find the current favorite status to toggle
   const currentProperty = await fetch(`http://localhost:3000/properties/${id}`);
   const data = await currentProperty.json();
   const updatedFavorite = !data.favorite;
 
-  // Update the favorite in the backend (db.json)
   try {
     await fetch(`http://localhost:3000/properties/${id}`, {
-      method: "PATCH", // or PUT if replacing the whole object
+      method: "PATCH", 
       headers: {
         "Content-Type": "application/json",
       },

@@ -2,6 +2,7 @@ import PropertyDetail from '../components/PropertyDetail';
 import { Link } from "react-router-dom";
 
 
+
 export function Individual() {
     return(
         <>
